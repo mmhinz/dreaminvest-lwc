@@ -47,7 +47,7 @@ sfdx force:auth:web:login -d -a myhuborg
 3. Clone this repository:
 
 ```zsh
-git clone https://github.com/trailheadapps/dreaminvest-lwc
+git clone https://github.com/mmhinz/dreaminvest-lwc
 cd dreaminvest-lwc
 ```
 
