@@ -4,9 +4,16 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>componentHeight</name>
-                <value>700px</value>
+                <value>315px</value>
             </componentInstanceProperties>
             <componentName>traderDesktop</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>context</name>
+                <value>NEWS</value>
+            </componentInstanceProperties>
+            <componentName>forceChatter:exposedFeed</componentName>
         </componentInstances>
         <name>main</name>
         <type>Region</type>
