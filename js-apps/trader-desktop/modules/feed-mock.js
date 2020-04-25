@@ -1,8 +1,8 @@
 var subscribers = [];
 
 var stocks = [
-    {symbol: "GM", open: 38.87},
-    {symbol: "GE", open: 25.40},
+    {symbol: "AAA", open: 11.10},
+    {symbol: "BBB", open: 25.40},
     {symbol: "MCD", open: 97.05},
     {symbol: "UAL", open: 69.45},
     {symbol: "WMT", open: 83.24},
