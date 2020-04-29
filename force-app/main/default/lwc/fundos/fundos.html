@@ -1,0 +1,27 @@
+<!--
+<template>
+    <lightning-card title="Fundos Bernard" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            {greetings.data}
+        </div>
+    </lightning-card>
+</template>
+-->
+
+<template>
+    <lightning-card
+        title="Bernard Fundos por Alphavantage.co"
+        icon-name="custom:custom14"
+    >
+        <div class="slds-m-around_medium">
+            <template if:true={contact.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contact.data}
+                    columns={columns}
+                >
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>
