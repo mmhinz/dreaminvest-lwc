@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Investor</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Soc_Security_Number__c</columns>
+    <columns>Data_Nascimento__c</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Sexo__c</columns>
+    <columns>Total_Investment__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Investor</label>
+</ListView>

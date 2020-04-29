@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-    mode: 'development',
+    mode: 'production',
     entry: './app.js',
     output: {
         path: path.resolve(__dirname, '../../force-app/main/default/staticresources/trader_desktop'),
