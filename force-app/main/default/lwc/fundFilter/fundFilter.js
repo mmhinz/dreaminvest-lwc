@@ -21,6 +21,14 @@ export default class FundFilter extends LightningElement {
         }
     }
 
+    handleCustomerProfileChange(event) {
+        if (event.detail) {
+            fireEvent(this.pageRef, 'dreaminvest__fundfilterchange', {
+                customerProfileClass: event.detail.value
+            });
+        }
+    }
+
     handleSectorChange(event) {
         if (event.detail) {
             let sector = event.detail.value;

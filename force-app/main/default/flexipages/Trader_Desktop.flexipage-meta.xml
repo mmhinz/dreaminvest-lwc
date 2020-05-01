@@ -6,13 +6,6 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-                <name>componentHeight</name>
-                <value>315px</value>
-            </componentInstanceProperties>
-            <componentName>traderDesktop</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
                 <name>context</name>
                 <value>NEWS</value>
             </componentInstanceProperties>

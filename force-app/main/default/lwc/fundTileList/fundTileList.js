@@ -61,6 +61,9 @@ export default class FundTileList extends LightningElement {
         if (event.assetClass !== undefined) {
             this._filter.assetClass = event.assetClass;
         }
+        if (event.customerProfileClass !== undefined) {
+            this._filter.customerProfileClass = event.customerProfileClass;
+        }
         if (event.sector !== undefined) {
             this._filter.sector = event.sector;
         }
