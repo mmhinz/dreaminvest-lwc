@@ -26,6 +26,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Fund__c.Customer_Profile__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Fund__c.Five_Year_Return__c</field>
         <readable>false</readable>
     </fieldPermissions>
