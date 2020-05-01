@@ -24,6 +24,9 @@ global with sharing class FundController {
         public String assetClass { get; set; }
 
         @AuraEnabled
+        public String customerProfileClass { get; set; }
+
+        @AuraEnabled
         public String sector { get; set; }
 
         @AuraEnabled
@@ -58,6 +61,8 @@ global with sharing class FundController {
         r.pageSize = pSize;
         r.page = (Integer) pageNumber;
         String assetClass = filter.assetClass;
+        String customerProfileClass = filter.customerProfileClass;
+        //String customerProfileClass = 'Profissional';
         String sector = filter.sector;
         Decimal minYtdReturn = filter.minYtdReturn;
         Decimal min1YearReturn = filter.min1YearReturn;
@@ -74,6 +79,10 @@ global with sharing class FundController {
         if (!String.isBlank(filter.assetClass)) {
             countSQL = countSQL + 'AND Asset_Class__c = :assetClass ';
         }
+        if (!String.isBlank(filter.customerProfileClass)) {
+            countSQL =
+                countSQL + 'AND Customer_Profile__c = :customerProfileClass ';
+        }
         if (!String.isBlank(filter.sector)) {
             countSQL = countSQL + 'AND Sector__c = :sector ';
         }
@@ -83,7 +92,7 @@ global with sharing class FundController {
             r.pages = 1;
         }
         String sql =
-            'SELECT id, name, abbreviation__c, asset_class__c, sector__r.Name, rating__c, YTD_Return__c, ' +
+            'SELECT id, name, abbreviation__c, asset_class__c, customer_profile__c, sector__r.Name, rating__c, YTD_Return__c, ' +
             'One_Year_Return__c, Two_Year_Return__c, Five_Year_Return__c FROM Fund__c WITH_SECURITY_ENFORCED where name LIKE :key ' +
             'AND YTD_Return__c >= :minYtdReturn AND YTD_Return__c <= :maxYtdReturn ' +
             'AND One_Year_Return__c >= :min1YearReturn AND One_Year_Return__c <= :max1YearReturn ' +
@@ -91,30 +100,14 @@ global with sharing class FundController {
         if (!String.isBlank(filter.assetClass)) {
             sql = sql + 'AND Asset_Class__c = :assetClass ';
         }
+        if (!String.isBlank(filter.customerProfileClass)) {
+            sql = sql + 'AND Customer_Profile__c = :customerProfileClass ';
+        }
         if (!String.isBlank(filter.sector)) {
             sql = sql + 'AND Sector__c = :sector ';
         }
         sql = sql + 'LIMIT :pSize OFFSET :offset';
         r.funds = Database.query(sql);
-
-        /**
-        Http http = new Http();
-        HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://th-apex-http-callout.herokuapp.com/animals');
-        request.setMethod('GET');
-        HttpResponse response = http.send(request);
-        // If the request is successful, parse the JSON response.
-        if (response.getStatusCode() == 200) {
-            // Deserialize the JSON string into collections of primitive data types.
-            Map<String, Object> results = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
-            // Cast the values in the 'animals' key as a list
-            List<Object> animals = (List<Object>) results.get('animals');
-            System.debug('Received the following animals:');
-            for (Object animal: animals) {
-                System.debug(animal);
-            }
-        }
-        **/
 
         return r;
     }
