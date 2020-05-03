@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Fund_Profile__c</fullName>
-    <description>Fund_Profile</description>
+    <fullName>Perfil__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>Fund_Profile</inlineHelpText>
-    <label>Fund_Profile</label>
-    <required>false</required>
-    <trackTrending>false</trackTrending>
+    <label>Perfil</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Conservador</fullName>
+                <fullName>Agressivo</fullName>
                 <default>true</default>
+                <label>Agressivo</label>
+            </value>
+            <value>
+                <fullName>Conservador</fullName>
+                <default>false</default>
                 <label>Conservador</label>
             </value>
             <value>
                 <fullName>Moderado</fullName>
                 <default>false</default>
                 <label>Moderado</label>
-            </value>
-            <value>
-                <fullName>Agressivo</fullName>
-                <default>false</default>
-                <label>Agressivo</label>
             </value>
         </valueSetDefinition>
     </valueSet>
