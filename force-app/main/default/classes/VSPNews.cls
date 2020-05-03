@@ -10,24 +10,28 @@ public class VSPNews {
             : [SELECT Name, Perfil__c FROM Account WHERE Id = :id];
 
         if (Account.Perfil__c == 'Agressivo') {
-            leadList.add('Noticia 1 - Paulo não gosta de Francisco');
-            leadList.add('Noticia 2 - Francisco não gosta de Paulo');
-            leadList.add('Noticia 3 - Carlos não gosta de Jose');
+            leadList.add(
+                '1-Ações da PETR4 em alta pela manhã, porem a comodide perde valor no mercado'
+            );
+            leadList.add(
+                '2-IBOVEPA tem dia positivo após queda de 2 dias, é hora de comprar ou vender?'
+            );
+            leadList.add(
+                '3-VVAR3 não para de cresce na pandemia do COVID-19, compras on-line aumenta 5%'
+            );
         }
         if (Account.Perfil__c == 'Moderado') {
-            leadList.add('Noticia 1 - Paulo não concorda com Jose');
-            leadList.add('Noticia 2 - Jose não concorda com Paulo');
+            leadList.add(
+                '1-SICREDI apresenta fundo com maior rentabilidade do mercado.'
+            );
+            leadList.add(
+                '2-TESOURO DIRETO tenta captar após crise 4 bilhões de reais.'
+            );
         }
         if (Account.Perfil__c == 'Conservador') {
-            leadList.add(
-                'Noticia 1 - Carlos nem sempre aprova opiniões de Jose'
-            );
-            leadList.add(
-                'Noticia 2 - Jose nem sempre aprova opiniões de Carlos'
-            );
-            leadList.add(
-                'Noticia 3 - Telma nem sempre aprova opiniões de Francisco'
-            );
+            leadList.add('1-Poupança possui 30 bilhoes');
+            leadList.add('2-CAIXA libera poca de ajuda a população');
+            leadList.add('3-Fundo de garantia rende menos que poupança');
         }
     }
 }
