@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Investimentos_Realizados__c</fullName>
+    <externalId>false</externalId>
+    <label>Investimentos Realizados</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nunca investi</fullName>
+                <default>false</default>
+                <label>Nunca investi</label>
+            </value>
+            <value>
+                <fullName>Poupança</fullName>
+                <default>false</default>
+                <label>Poupança</label>
+            </value>
+            <value>
+                <fullName>Previdência privada</fullName>
+                <default>false</default>
+                <label>Previdência privada</label>
+            </value>
+            <value>
+                <fullName>Titulos de RF</fullName>
+                <default>false</default>
+                <label>Titulos de RF</label>
+            </value>
+            <value>
+                <fullName>Fundos de investimento</fullName>
+                <default>false</default>
+                <label>Fundos de investimento</label>
+            </value>
+            <value>
+                <fullName>Bolsa de Valores e derivativos</fullName>
+                <default>false</default>
+                <label>Bolsa de Valores e derivativos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

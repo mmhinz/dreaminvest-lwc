@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tempo_no_Investimento__c</fullName>
+    <externalId>false</externalId>
+    <label>Tempo no Investimento</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Menos de 1 ano</fullName>
+                <default>false</default>
+                <label>Menos de 1 ano</label>
+            </value>
+            <value>
+                <fullName>de 1 a 3 anos</fullName>
+                <default>false</default>
+                <label>de 1 a 3 anos</label>
+            </value>
+            <value>
+                <fullName>de 3 a 5 anos</fullName>
+                <default>false</default>
+                <label>de 3 a 5 anos</label>
+            </value>
+            <value>
+                <fullName>acima de 5 anos</fullName>
+                <default>false</default>
+                <label>acima de 5 anos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
