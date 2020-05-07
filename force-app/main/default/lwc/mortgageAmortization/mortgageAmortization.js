@@ -108,7 +108,7 @@ export default class MortgageAmortization extends LightningElement {
             this._principal,
             this._years,
             this._rate,
-            this._ytd
+            Number(this._ytd)
         );
 
         const monthlyRate = this._rate / 100 / 12;

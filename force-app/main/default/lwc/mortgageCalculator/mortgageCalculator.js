@@ -117,7 +117,7 @@ export default class MortgageCalculator extends LightningElement {
             this._principal,
             this._years,
             this._rate,
-            this._ytd
+            Number(this._ytd)
         );
     }
 
