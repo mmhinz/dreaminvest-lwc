@@ -19,6 +19,11 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Loans</masterLabel>
+    <quickActionList>
+        <quickActionListItems>
+            <quickActionName>NewOpportunity</quickActionName>
+        </quickActionListItems>
+    </quickActionList>
     <template>
         <name>flexipage:appHomeTemplateHeaderTwoColumnsLeftSidebar</name>
     </template>

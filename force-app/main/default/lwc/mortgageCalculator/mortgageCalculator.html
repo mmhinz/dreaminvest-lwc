@@ -1,6 +1,14 @@
 <template>
     <lightning-card title="Mortgage Calculator" icon-name="custom:custom62">
         <div class="input">
+            <lightning-combobox
+                name="fundo"
+                label="Fundos:"
+                required
+                onchange={handleFundChange}
+                options={fundOptions}
+                value="PT2       ++++       4    ****      Multi-Asset     %%%%     33   $$$$    3.3     ))))     1.1     ((((     9.9     @@@@    9.0     {{{{    Moderado      }}}}     Varejo        "
+            ></lightning-combobox>
             <lightning-input
                 id="principal"
                 type="number"
@@ -22,6 +30,30 @@
                 label="Rate:"
                 value={defaultRate}
                 onchange={handleRateChange}
+            ></lightning-input>
+            <lightning-input
+                id="perfil_fundo"
+                type="text"
+                label="Perfil Fundo:"
+                value={defaultPerfilFundo}
+                onchange={handlePerfilFundo}
+                disabled
+            ></lightning-input>
+            <lightning-input
+                id="perfil_consumidor"
+                type="text"
+                label="Perfil Consumidor:"
+                value={defaultPerfilConsumidor}
+                onchange={handlePerfilConsumidor}
+                disabled
+            ></lightning-input>
+            <lightning-input
+                id="ytd"
+                type="text"
+                label="YTD: (Year to Date)"
+                value={defaultYTD}
+                onchange={handleYTD}
+                disabled
             ></lightning-input>
         </div>
         <div class="result">
