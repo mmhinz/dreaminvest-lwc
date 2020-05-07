@@ -4,6 +4,14 @@
 
         <div class="input">
             <lightning-layout vertical-align="end">
+                <lightning-combobox
+                    name="fundo"
+                    label="Fundos:"
+                    required
+                    onchange={handleFundChange}
+                    options={fundOptions}
+                    value="PT2       ++++       4    ****      Multi-Asset     %%%%     33   $$$$    3.3     ))))     1.1     ((((     9.9     @@@@    9.0     {{{{    Moderado      }}}}     Varejo        "
+                ></lightning-combobox>
                 <lightning-layout-item>
                     <lightning-input
                         id="principal"
@@ -32,6 +40,30 @@
                         onchange={handleRateChange}
                     ></lightning-input>
                 </lightning-layout-item>
+                <lightning-input
+                    id="perfil_fundo"
+                    type="text"
+                    label="Perfil Fundo:"
+                    value={defaultPerfilFundo}
+                    onchange={handlePerfilFundo}
+                    disabled
+                ></lightning-input>
+                <lightning-input
+                    id="perfil_consumidor"
+                    type="text"
+                    label="Perfil Consumidor:"
+                    value={defaultPerfilConsumidor}
+                    onchange={handlePerfilConsumidor}
+                    disabled
+                ></lightning-input>
+                <lightning-input
+                    id="ytd"
+                    type="text"
+                    label="YTD:"
+                    value={defaultYTD}
+                    onchange={handleYTD}
+                    disabled
+                ></lightning-input>
                 <lightning-layout-item padding="horizontal-small">
                     <lightning-button
                         label="Calculate"

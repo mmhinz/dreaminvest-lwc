@@ -4,16 +4,6 @@
         <componentInstances>
             <componentName>fundos</componentName>
         </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>context</name>
-                <value>NEWS</value>
-            </componentInstanceProperties>
-            <componentName>forceChatter:exposedFeed</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>snews:News</componentName>
-        </componentInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
