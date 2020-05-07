@@ -27,6 +27,9 @@ global with sharing class FundController {
         public String customerProfileClass { get; set; }
 
         @AuraEnabled
+        public String fundProfileClass { get; set; }
+
+        @AuraEnabled
         public String sector { get; set; }
 
         @AuraEnabled
@@ -62,7 +65,7 @@ global with sharing class FundController {
         r.page = (Integer) pageNumber;
         String assetClass = filter.assetClass;
         String customerProfileClass = filter.customerProfileClass;
-        //String customerProfileClass = 'Profissional';
+        String fundProfileClass = filter.fundProfileClass;
         String sector = filter.sector;
         Decimal minYtdReturn = filter.minYtdReturn;
         Decimal min1YearReturn = filter.min1YearReturn;
@@ -83,6 +86,9 @@ global with sharing class FundController {
             countSQL =
                 countSQL + 'AND Customer_Profile__c = :customerProfileClass ';
         }
+        if (!String.isBlank(filter.fundProfileClass)) {
+            countSQL = countSQL + 'AND Fund_profile__c = :fundProfileClass ';
+        }
         if (!String.isBlank(filter.sector)) {
             countSQL = countSQL + 'AND Sector__c = :sector ';
         }
@@ -92,7 +98,7 @@ global with sharing class FundController {
             r.pages = 1;
         }
         String sql =
-            'SELECT id, name, abbreviation__c, asset_class__c, customer_profile__c, sector__r.Name, rating__c, YTD_Return__c, ' +
+            'SELECT id, name, abbreviation__c, asset_class__c, customer_profile__c, fund_profile__c, sector__r.Name, rating__c, YTD_Return__c, ' +
             'One_Year_Return__c, Two_Year_Return__c, Five_Year_Return__c FROM Fund__c WITH_SECURITY_ENFORCED where name LIKE :key ' +
             'AND YTD_Return__c >= :minYtdReturn AND YTD_Return__c <= :maxYtdReturn ' +
             'AND One_Year_Return__c >= :min1YearReturn AND One_Year_Return__c <= :max1YearReturn ' +
@@ -102,6 +108,9 @@ global with sharing class FundController {
         }
         if (!String.isBlank(filter.customerProfileClass)) {
             sql = sql + 'AND Customer_Profile__c = :customerProfileClass ';
+        }
+        if (!String.isBlank(filter.fundProfileClass)) {
+            sql = sql + 'AND Fund_profile__c = :fundProfileClass ';
         }
         if (!String.isBlank(filter.sector)) {
             sql = sql + 'AND Sector__c = :sector ';
