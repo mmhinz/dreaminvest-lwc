@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>Calcular_Perfil</name>
+        <label>Calcular Perfil</label>
+        <locationX>380</locationX>
+        <locationY>48</locationY>
+        <assignmentItems>
+            <assignToReference>perfil_agressivo</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>contar_resposta_perfil_agressivo</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>perfil_moderado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>contar_resposta_perfil_moderado</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>perfil_conservador</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>contar_resposta_perfil_conservador</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Verificar_Perfil_do_Investidor</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Mapping_Anserws_to_Profile</name>
+        <label>Mapping Anserws to Profile</label>
+        <locationX>753</locationX>
+        <locationY>190</locationY>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.A_frase_que_melhor_o_descreve__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frase_que_melhor_descreve</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.Atitude_nas_oscilacoes__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Se_algo_inesperado_acontecer_na_economia_ou_no_mercado_e_o_resultado_for_uma_osc</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.Experiencia_com_investimentos__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Como_voc_define_sua_experi_ncia_com_investimentos</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.Investimentos_Realizados__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Investimentos_j_realizados</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.O_que_voce_prioriza_na_hora_de_investir__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>O_que_voc_prioriza_na_hora_de_investir</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.Quando_vai_usar_os_recursos__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sobre_os_recursos_investidos_quando_voc_pretende_utiliz_los</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.Tempo_no_Investimento__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Por_quanto_tempo_pretende_deixar_o_dinheiro_investido</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Form_Record.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Investment_Profile_Account_Update.Perfil_Investidor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>perfil_do_investidor</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Investment_Profile_Form</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Verificar_Perfil_do_Investidor</name>
+        <label>Verificar Perfil do Investidor</label>
+        <locationX>564</locationX>
+        <locationY>48</locationY>
+        <assignmentItems>
+            <assignToReference>perfil_do_investidor</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_verificar_perfil_investidor</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Mostrar_resultado_da_pesquisa</targetReference>
+        </connector>
+    </assignments>
+    <dynamicChoiceSets>
+        <name>atitude_oscilacoes</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Atitude_nas_oscilacoes__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>experiencia_com_investimentos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Experiencia_com_investimentos__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>frase_que_melhor_descreve</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>A_frase_que_melhor_o_descreve__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>investimentos_passados</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Investimentos_Realizados__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>investimentos_selecionados_na_tela</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Investimentos_Realizados__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Investment_Acccounts</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <object>Account</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>prioriza_ao_investir</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>O_que_voce_prioriza_na_hora_de_investir__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>quando_utilizar_recursos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Quando_vai_usar_os_recursos__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Quanto_tempo_pretende_investir</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Tempo_no_Investimento__c</picklistField>
+        <picklistObject>Investment_Profile_Form__c</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>contar_resposta_perfil_agressivo</name>
+        <dataType>Number</dataType>
+        <expression>CASE( {!frase_que_melhor_descreve}, &quot;Me sinto confortável em investir, pois conheço bem o mercado&quot; ,1, 0 ) +
+CASE( {!prioriza_ao_investir}, &quot;Grandes lucros a curto prazo&quot; , 1, 0 ) +
+CASE( {!experiencia_com_investimentos}, &quot;Possuo ampla experiência no mercado de renda variável e de derivativos&quot; , 1, 0 ) +
+CASE( {!atitude_oscilacoes} , &quot;Entendo que meu patrimônio está sujeito a flutuações dessa magnitude e não estão 100% protegido&quot;, 1,0)  +
+CASE( {!Quanto_tempo_pretende_investir} , &quot;Menos de 1 ano&quot;, 1,0)  +
+If (IsBlank({!Investimentos_j_realizados}), 0,
+If (AND(Contains({!Investimentos_j_realizados}, &quot;; &quot;) == false, {!Investimentos_j_realizados} == &quot;Bolsa de Valores e derivativos&quot;),  1, 0 
+)
+) +
+CASE( {!quando_utilizar_recursos} , &quot;Nos próximos 6 meses&quot;, 1, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>contar_resposta_perfil_conservador</name>
+        <dataType>Number</dataType>
+        <expression>CASE( {!frase_que_melhor_descreve}, &quot;Busco primeiro segurança, pensando no longo prazo, mesmo abrindo mão de um pouco de rentabilidade&quot; ,1, 0 ) +
+CASE( {!prioriza_ao_investir}, &quot;Segurança e Tranquilidade&quot; , 1, 0 ) +
+CASE( {!experiencia_com_investimentos}, &quot;Nenhuma&quot; , 1, 0 ) +
+CASE( {!atitude_oscilacoes} , &quot;Venderia imediatamente&quot;, 1,0)  +
+CASE( {!Quanto_tempo_pretende_investir} , &quot;acima de 5 anos&quot;, 1,0)  +
+If (IsBlank({!Investimentos_j_realizados}), 0,
+ If ( OR(Contains({!Investimentos_j_realizados}, &quot;Nunca investi&quot;) , Contains({!Investimentos_j_realizados}, &quot;Poupança&quot;) , Contains({!Investimentos_j_realizados}, &quot;Previdência privada&quot;)),  1, 0 
+ )
+) +
+CASE( {!quando_utilizar_recursos} , &quot;Não tenho necessidade de utilizar os recursos&quot;, 1, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>contar_resposta_perfil_moderado</name>
+        <dataType>Number</dataType>
+        <expression>CASE( {!frase_que_melhor_descreve}, &quot;Sigo o conselho de alguém que conheça mais o mercado que eu e seja da minha confiança para conseguir lucros acima de média&quot; ,1, 0 ) +
+CASE( {!prioriza_ao_investir}, &quot;Rentabilidade e Diversificação&quot; , 1, 0 ) +
+CASE( {!experiencia_com_investimentos}, &quot;Possuo algum conhecimento no mercado de renda variável e de derivativos&quot; , 1, 0 ) +
+CASE( {!atitude_oscilacoes} , &quot;Entendo que estou exposto a este risco para determinados ativos, mas não para todo o meu patrimônio&quot;, 1,0)  +
+CASE( {!Quanto_tempo_pretende_investir} , &quot;de 1 a 3 anos&quot;, 1,0)  +
+CASE( {!Quanto_tempo_pretende_investir} , &quot;de 3 a 5 anos&quot;, 1,0)  +
+If (IsBlank({!Investimentos_j_realizados}), 0,
+ If ( OR(Contains({!Investimentos_j_realizados}, &quot;Fundos de investimento&quot;) , Contains({!Investimentos_j_realizados}, &quot;Titulos de RF&quot;)),  1, 0 
+ )
+) +
+CASE( {!quando_utilizar_recursos} , &quot;Nos próximos 12 meses&quot;, 1, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>formula_verificar_perfil_investidor</name>
+        <dataType>String</dataType>
+        <expression>IF({!perfil_agressivo} &gt; {!perfil_moderado} &amp;&amp; {!perfil_agressivo} &gt; {!perfil_conservador}, &quot;AGRESSIVO&quot;, 
+IF({!perfil_moderado} &gt;= {!perfil_agressivo} &amp;&amp; {!perfil_moderado} &gt; {!perfil_conservador}, &quot;MODERADO&quot;,
+IF({!perfil_conservador} &gt;= {!perfil_agressivo} &amp;&amp; {!perfil_conservador} &gt;= {!perfil_moderado}, &quot;CONSERVADOR&quot;,
+&quot;NAO SEI&quot; )))</expression>
+    </formulas>
+    <interviewLabel>Calcular Perfil Investidor {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Calcular Perfil Investidor</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Investment_Profile_Form</name>
+        <label>Create Investment Profile Form</label>
+        <locationX>757</locationX>
+        <locationY>368</locationY>
+        <connector>
+            <targetReference>Update_Account_Investment_Profile</targetReference>
+        </connector>
+        <inputReference>Investment_Profile_Form_Record</inputReference>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Account_Investment_Profile</name>
+        <label>Update Account Investment Profile</label>
+        <locationX>904</locationX>
+        <locationY>368</locationY>
+        <connector>
+            <targetReference>Tela_Final_Calculo_Perfil_Investidor</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Perfil_Investidor__c</field>
+            <value>
+                <elementReference>perfil_do_investidor</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <screens>
+        <name>Dream_Investments_Profile_Questions</name>
+        <label>Dream Investments - Pesquisa de Perfil</label>
+        <locationX>200</locationX>
+        <locationY>49</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Calcular_Perfil</targetReference>
+        </connector>
+        <fields>
+            <name>Qual_a_frase_que_melhor_o_descreve</name>
+            <choiceReferences>frase_que_melhor_descreve</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>1. Qual a frase que melhor o descreve</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>O_que_voc_prioriza_na_hora_de_investir</name>
+            <choiceReferences>prioriza_ao_investir</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>2. O que você prioriza na hora de investir</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Como_voc_define_sua_experi_ncia_com_investimentos</name>
+            <choiceReferences>experiencia_com_investimentos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>3. Como você define sua experiência com investimentos</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Se_algo_inesperado_acontecer_na_economia_ou_no_mercado_e_o_resultado_for_uma_osc</name>
+            <choiceReferences>atitude_oscilacoes</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>4. Se algo inesperado acontecer na economia ou no mercado e o resultado for uma oscilação grande nos seus investimentos, qual a sua atitude</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Por_quanto_tempo_pretende_deixar_o_dinheiro_investido</name>
+            <choiceReferences>Quanto_tempo_pretende_investir</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>5. Por quanto tempo pretende deixar o dinheiro investido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Investimentos_j_realizados</name>
+            <choiceReferences>investimentos_selecionados_na_tela</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>6. Quais desses investimentos você já realizou no passado</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Sobre_os_recursos_investidos_quando_voc_pretende_utiliz_los</name>
+            <choiceReferences>quando_utilizar_recursos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>7. Sobre os recursos investidos, quando você pretende utilizá-los</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Mostrar_resultado_da_pesquisa</name>
+        <label>Mostrar resultado da pesquisa</label>
+        <locationX>745</locationX>
+        <locationY>48</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Mapping_Anserws_to_Profile</targetReference>
+        </connector>
+        <fields>
+            <name>Resultado_do_perfil</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>perfil_do_investidor</elementReference>
+            </defaultValue>
+            <fieldText>Resultado do perfil</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Account_Enviada</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>recordId</elementReference>
+            </defaultValue>
+            <fieldText>Account Enviada</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Tela_Final_Calculo_Perfil_Investidor</name>
+        <label>Tela Final Calculo Perfil Investidor</label>
+        <locationX>1047</locationX>
+        <locationY>368</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>mensagem_final_perfil_investidor</name>
+            <fieldText>&lt;p&gt;Perfil de Investidor salvo com sucesso!&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>51</locationX>
+        <locationY>49</locationY>
+        <connector>
+            <targetReference>Dream_Investments_Profile_Questions</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Investment_Profile_Account_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>Investment_Profile_Form_Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Investment_Profile_Form__c</objectType>
+    </variables>
+    <variables>
+        <name>perfil_agressivo</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>perfil_conservador</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>perfil_do_investidor</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>perfil_moderado</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
