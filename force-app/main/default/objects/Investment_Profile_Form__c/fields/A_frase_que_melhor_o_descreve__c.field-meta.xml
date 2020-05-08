@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>A_frase_que_melhor_o_descreve__c</fullName>
+    <description>1. Selecione a frase que melhor o descreve na hora de escolher um investimento:
+Sigo o conselho de alguém que conheça mais o mercado que eu e seja da minha confiança para conseguir lucros acima de média. (M)
+Busco primeiro segurança, pensando no longo prazo, mesmo abrindo mão de um pouco de rentabilidade. (C)
+Me sinto confortável em investir, pois conheço bem o mercado. (A)</description>
+    <externalId>false</externalId>
+    <label>A frase que melhor o descreve</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sigo o conselho de alguém que conheça mais o mercado que eu e seja da minha confiança para conseguir lucros acima de média</fullName>
+                <default>false</default>
+                <label>Sigo o conselho de alguém que conheça mais o mercado que eu e seja da minha confiança para conseguir lucros acima de média</label>
+            </value>
+            <value>
+                <fullName>Busco primeiro segurança, pensando no longo prazo, mesmo abrindo mão de um pouco de rentabilidade.</fullName>
+                <default>false</default>
+                <label>Busco primeiro segurança, pensando no longo prazo, mesmo abrindo mão de um pouco de rentabilidade</label>
+            </value>
+            <value>
+                <fullName>Me sinto confortável em investir, pois conheço bem o mercado</fullName>
+                <default>false</default>
+                <label>Me sinto confortável em investir, pois conheço bem o mercado</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

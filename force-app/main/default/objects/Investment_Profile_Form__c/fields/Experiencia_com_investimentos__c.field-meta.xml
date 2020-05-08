@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Experiencia_com_investimentos__c</fullName>
+    <externalId>false</externalId>
+    <label>Experiência com investimentos</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nenhuma</fullName>
+                <default>false</default>
+                <label>Nenhuma</label>
+            </value>
+            <value>
+                <fullName>Possuo conhecimento e experiência no mercado de renda fixa e fundos</fullName>
+                <default>false</default>
+                <label>Possuo conhecimento e experiência no mercado de renda fixa e fundos</label>
+            </value>
+            <value>
+                <fullName>Possuo algum conhecimento no mercado de renda variável e de derivativos</fullName>
+                <default>false</default>
+                <label>Possuo algum conhecimento no mercado de renda variável e de derivativos</label>
+            </value>
+            <value>
+                <fullName>Possuo ampla experiência no mercado de renda variável e de derivativos</fullName>
+                <default>false</default>
+                <label>Possuo ampla experiência no mercado de renda variável e de derivativos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
